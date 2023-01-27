@@ -13,19 +13,65 @@
     <link rel="stylesheet" href="style.css">
     <title>SNORLAX CLICKER</title>
 </head>
+<style>
+    body.debug .container,
+    body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+    }
 
-<body>
+    body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+    }
+</style>
+
+<body class="debug">
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 bg-dark text-center">
-
+                <div class="col-12 bg-dark text-center text-light">
+                    <h1>S N O R L A X</h1>
                 </div>
             </div>
         </div>
     </header>
     <main>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center p-3">
+                    <img src="https://media.tenor.com/sdB-sf1EVwwAAAAC/pokemon-snorlax.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-1">
+                    number of clicks
+                </div>
+                <div class="col-4">
+                    total $$$
+                </div>
+                <div class="col-1">
+                    Auto Upgrade info
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">click upgrades</div>
+                <div class="col-3">auto upgrades</div>
+                <div class="col-3">click stats</div>
+                <div class="col-3">auto stats</div>
+            </div>
+        </div>
     </main>
     <footer>
 
