@@ -56,13 +56,19 @@ function buyUpgrades(upgradeName){
     console.log(purchasedUpgrade);
     if (clickMaster.clickValue >= purchasedUpgrade.price) {
         clickMaster.clickValue -= purchasedUpgrade.price
+        purchasedUpgrade.quantity += 1
+    } else if (clickMaster.clickValue < purchasedUpgrade.price) {
+        purchasedUpgrade.quantity += 0
     }
-    purchasedUpgrade.quantity += 1
+
+    
 
     if (purchasedUpgrade.name == 'yawn') {
         yawnUp.innerText = purchasedUpgrade.quantity
     }else if (purchasedUpgrade.name == 'rest'){
         restUp.innerText = purchasedUpgrade.quantity
+    }else{
+        console.log("how did you get here")
     }
 
     
