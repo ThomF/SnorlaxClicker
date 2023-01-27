@@ -49,6 +49,7 @@ function mainClick(){
 function buyUpgrades(upgradeName){
     let clickValue = document.getElementById('clickValue')
     let yawnUp = document.getElementById('yawnUp')
+    let restUp = document.getElementById('restUp')
 
     const purchasedUpgrade = clickUpgrades.find(p => p.name == upgradeName)
     
@@ -57,16 +58,19 @@ function buyUpgrades(upgradeName){
         clickMaster.clickValue -= purchasedUpgrade.price
     }
     purchasedUpgrade.quantity += 1
-    yawnUp.innerText = purchasedUpgrade.quantity
+
+    if (purchasedUpgrade.name == 'yawn') {
+        yawnUp.innerText = purchasedUpgrade.quantity
+    }else if (purchasedUpgrade.name == 'rest'){
+        restUp.innerText = purchasedUpgrade.quantity
+    }
+
+    
     clickValue.innerText = clickMaster.clickValue
 }
 
-function addUpgrade(){
-    let yawnUp = document.getElementById('yawnUp')
-    let cValue = document.getElementById('clickValue')
-    yawnUp.innerText = yawnUpgrade.quantity
-    cValue.innerText = clickMaster.clickValue
-}
+
+
 
 
 // function clickUp(){
