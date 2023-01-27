@@ -22,34 +22,40 @@ let clickVal = {
 
 function mainClick(){
     let clicks = document.getElementById('clickCount')
+    let clickValue = document.getElementById('clickValue')
 
+    clickValue.innerText = clickCash.clickValue
     clicks.innerText = clickMaster.click++
-
     console.log(clickMaster.click)
 
-    clickValue()
+    // clickValue()
 }
 
 
 
-function clickValue(){
-    let value = document.getElementById('clickValue')
-    let clickValue = 0
+// function clickValue(){
+//     let value = document.getElementById('clickValue')
+//     let clickValue = 0
 
-    clickMaster.click * clickMaster.rest
+//     clickMaster.click * clickMaster.rest
 
 
-}
+// }
 
 function yawnUpgrade(){
-    let yawnUpgrade = document.getElementById('yawnBtn')
     let yawnUp = document.getElementById('yawnUp')
+    let cValue = document.getElementById('clickValue')
 
     if (clickCash.clickValue >= upgradeCost.yawn) {
         clickVal.yawn++
-        
+        clickCash.clickValue -= upgradeCost.yawn
+    }else(
+        console.log("not enough!")
+    )
 
-    }
-    yawnUpgrade.innerHTML = 
+    console.log(clickCash.clickValue)
+    yawnUp.innerText = clickVal.yawn
+    cValue.innerText = clickCash.clickValue
     console.log()
 }
+
