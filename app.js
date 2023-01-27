@@ -1,5 +1,5 @@
 let clickMaster = {
-    click: 1,
+    click: 0,
     rest: 0,
     yawn: 0
 }
@@ -11,8 +11,8 @@ let clickAuto = {
     autoCatch: 100
 }
 let upgradeCost = {
-    rest: 5,
-    yawn: 50
+    yawn: 2,
+    rest: 5
 }
 let clickVal = {
     rest: 0,
@@ -24,23 +24,35 @@ function mainClick(){
     let clicks = document.getElementById('clickCount')
     let clickValue = document.getElementById('clickValue')
 
-    clickValue.innerText = clickCash.clickValue
+
     clicks.innerText = clickMaster.click++
+    clickValue.innerText = clickCash.clickValue++ 
     console.log(clickMaster.click)
 
-    // clickValue()
+    clickUp()
 }
 
 
 
-// function clickValue(){
-//     let value = document.getElementById('clickValue')
-//     let clickValue = 0
-
-//     clickMaster.click * clickMaster.rest
+function clickUp(){
+    let value = document.getElementById('clickValue')
 
 
-// }
+    if (clickVal.yawn > 0) {
+        clickVal.yawn * 1.5
+    }else{
+        console.log('no yawn upgrades to click')
+    }
+    
+    if (clickVal.rest > 0) {
+        clickVal.rest * 1.5
+    } else{
+        console.log('no rest upgrades to click')
+    }
+
+
+
+}
 
 function yawnUpgrade(){
     let yawnUp = document.getElementById('yawnUp')
@@ -57,5 +69,24 @@ function yawnUpgrade(){
     yawnUp.innerText = clickVal.yawn
     cValue.innerText = clickCash.clickValue
     console.log()
+    clickUp()
+}
+
+function restUpgrade(){
+    let yawnUp = document.getElementById('restUp')
+    let cValue = document.getElementById('clickValue')
+
+    if (clickCash.clickValue >= upgradeCost.rest) {
+        clickVal.rest++
+        clickCash.clickValue -= upgradeCost.rest
+    }else(
+        console.log("not enough!")
+    )
+
+    console.log(clickCash.clickValue)
+    yawnUp.innerText = clickVal.rest
+    cValue.innerText = clickCash.clickValue
+    console.log()
+    clickUp()
 }
 
