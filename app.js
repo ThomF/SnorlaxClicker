@@ -34,6 +34,20 @@ let clickUpgrades = [
     }
 ];
 
+let autoClickUp = [
+    {
+        name: 'HyperBeam',
+        price: 100,
+        quantity: 0,
+        multiplier: 0
+    },
+    {
+        name: 'Pound',
+        price: 250,
+        quantity: 0,
+        multiplier: 0,
+}]
+
 let totalUp = {
     total: 0
 }
@@ -62,52 +76,86 @@ function buyUpgrades(upgradeName){
     let rBtn = document.getElementById('restBtn')
 
     const purchasedUpgrade = clickUpgrades.find(p => p.name == upgradeName)
-
-
     console.log(purchasedUpgrade);
     if (clickMaster.clickValue >= purchasedUpgrade.price) {
-
         clickMaster.clickValue -= purchasedUpgrade.price
         
         if (purchasedUpgrade.name == 'yawn') {
             purchasedUpgrade.quantity += 1
             purchasedUpgrade.multiplier += 1
-            purchasedUpgrade.price +=5
+            purchasedUpgrade.price +=10
             console.log(purchasedUpgrade.price)
             yBtn.innerText = purchasedUpgrade.price
             
         }else if (purchasedUpgrade.name == 'rest'){
             purchasedUpgrade.quantity += 1
             purchasedUpgrade.multiplier += 5
-            purchasedUpgrade.price +=15
+            purchasedUpgrade.price +=25
             console.log(purchasedUpgrade.price)
             rBtn.innerText = purchasedUpgrade.price
             
         } else if (clickMaster.clickValue < purchasedUpgrade.price) {
         purchasedUpgrade.quantity += 0
     }
-
-
-
-
     if (purchasedUpgrade.name == 'yawn') {
         yawnUp.innerText = purchasedUpgrade.quantity
         // purchasedUpgrade.quantity += totalUp.total++
-
     }else if (purchasedUpgrade.name == 'rest'){
         restUp.innerText = purchasedUpgrade.quantity
         // purchasedUpgrade.quantity += totalUp.total
-
     }else{
         console.log("how did you get here")
     }
-
     
     clickValue.innerText = clickMaster.clickValue
     clickUp()
 }
 }
 
+function buyAutoUp(upgradeName){
+    let clickValue = document.getElementById('clickValue')
+    let yawnUp = document.getElementById('hyperUp')
+    let restUp = document.getElementById('poundUp')
+    let yBtn = document.getElementById('hyperBtn')
+    let rBtn = document.getElementById('poundBtn')
+
+    const autoClickUp = clickUpgrades.find(p => p.name == upgradeName)
+    console.log(autoClickUp);
+    
+    if (clickMaster.clickValue >= autoClickUp.price) {
+        clickMaster.clickValue -= autoClickUp.price
+        
+        if (autoClickUp.name == 'HyperBeam') {
+            autoClickUp.quantity += 1
+            autoClickUp.multiplier += 1
+            autoClickUp.price +=200
+            console.log(autoClickUp.price)
+            yBtn.innerText = autoClickUp.price
+            
+        }else if (autoClickUp.name == 'Pound'){
+            autoClickUp.quantity += 1
+            autoClickUp.multiplier += 5
+            autoClickUp.price +=350
+            console.log(autoClickUp.price)
+            rBtn.innerText = autoClickUp.price
+            
+        } else if (clickMaster.clickValue < autoClickUp.price) {
+        autoClickUp.quantity += 0
+    }
+    if (autoClickUp.name == 'HyperBea,') {
+        yawnUp.innerText = autoClickUp.quantity
+        // purchasedUpgrade.quantity += totalUp.total++
+    }else if (autoClickUp.name == 'Pound'){
+        restUp.innerText = autoClickUp.quantity
+        // purchasedUpgrade.quantity += totalUp.total
+    }else{
+        console.log("how did you get here")
+    }
+    
+    clickValue.innerText = clickMaster.clickValue
+    clickUp()
+}
+}
 
 function clickUp(){
 

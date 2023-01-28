@@ -71,10 +71,10 @@
                     total $$$
                     <span id="clickValue">100</span>
                 </div>
-                <div class="col-1">
+                <div class="col-3">
                     Auto Upgrade info
                 </div>
-                <div class="col-3"></div>
+                <div class="col-1"></div>
             </div>
         </div>
         <div class="container-fluid text-light">
@@ -92,27 +92,65 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-3">auto upgrades</div>
-                <div class="col-3 d-flex align-items-between">
+                <!-- SECTION AUTO UP -->
+                <div class="col-3 text-center">
+                    <h1>Auto Upgrades</h1>
                     <div>
-                        <h1>
-                            YAWN |||
-                        </h1>
-                        <h4>
-                            <span id="yawnUp">0</span>
-                        </h4>
+                        <h5>YAWN + 75</h5>
+                        <button class="btn btn-success" onclick="buyAutoUp('HyperBeam')"><span id="hyperBtn">100</span>
+                        </button>
                     </div>
                     <div>
-                        <h1>
-                            REST
-                        </h1>
-                        <h4>
-                            <span id="restUp">0</span>
-                        </h4>
+                        <h5>REST + 150</h5>
+                        <button class="btn btn-success" onclick="buyAutoUp('Pound')"><span id="poundBtn">250</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-3 align-items-between">
+                    <div class="row">
+                        <div>
+                            <h1>
+                                YAWN
+                            </h1>
+                            <h4>
+                                <span id="yawnUp">0</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <h1>
+                                REST
+                            </h1>
+                            <h4>
+                                <span id="restUp">0</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <div>
+                            <h1>
+                                HYPERBEAM
+                            </h1>
+                            <h4>
+                                <span id="hyperUp">0</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <h1>
+                                POUND
+                            </h1>
+                            <h4>
+                                <span id="poundUp">0</span>
+                            </h4>
+                        </div>
                     </div>
 
                 </div>
-                <div class="col-3">auto stats</div>
             </div>
         </div>
     </main>
