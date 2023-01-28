@@ -21,101 +21,144 @@ let clickVal = {
 let clickUpgrades = [
     {
     name: 'yawn',
-    price: 3,
+    price: 0,
     quantity: 0,
-    multiplier: 1.2
+    // multiplier refers to each time a +1 is bought it is stores as that/ if 4 plus 3 are bought multiplier hold 12 3+3+3+3
+    multiplier: 0,
     },
     {
         name: 'rest',
-        price: 6,
+        price: 5,
         quantity: 0,
-        multiplier: 1.8
+        multiplier: 0,
     }
 ];
+
+let totalUp = {
+    total: 0
+}
 
 
 function mainClick(){
     let clicks = document.getElementById('clickCount')
     let clickValue = document.getElementById('clickValue')
-
-
+    let upgradedClick = totalUp.total += clickMaster.clickValue
+    
     clicks.innerText = clickMaster.click++
-    clickValue.innerText = clickMaster.clickValue++ 
+    clickValue.innerText = clickMaster.clickValue =+ totalUp.total
     console.log(clickMaster.click)
 
-    // clickUp()
+    totalUp.total += clickMaster.clickValue
+    clickMaster.clickValue++
+    
+    clickUp()
 }
 
 function buyUpgrades(upgradeName){
     let clickValue = document.getElementById('clickValue')
     let yawnUp = document.getElementById('yawnUp')
     let restUp = document.getElementById('restUp')
+    let yBtn = document.getElementById('yawnBtn')
+    let rBtn = document.getElementById('restBtn')
 
     const purchasedUpgrade = clickUpgrades.find(p => p.name == upgradeName)
-    
+
+
     console.log(purchasedUpgrade);
     if (clickMaster.clickValue >= purchasedUpgrade.price) {
+
         clickMaster.clickValue -= purchasedUpgrade.price
-        purchasedUpgrade.quantity += 1
-    } else if (clickMaster.clickValue < purchasedUpgrade.price) {
+        
+        if (purchasedUpgrade.name == 'yawn') {
+            purchasedUpgrade.quantity += 1
+            purchasedUpgrade.multiplier += 1
+            purchasedUpgrade.price +=5
+            console.log(purchasedUpgrade.price)
+            yBtn.innerText = purchasedUpgrade.price
+        }else if (purchasedUpgrade.name == 'rest'){
+            purchasedUpgrade.quantity += 1
+            purchasedUpgrade.multiplier += 5
+            purchasedUpgrade.price +=15
+            console.log(purchasedUpgrade.price)
+            rBtn.innerText = purchasedUpgrade.price
+
+        } else if (clickMaster.clickValue < purchasedUpgrade.price) {
         purchasedUpgrade.quantity += 0
     }
 
-    
+
+
 
     if (purchasedUpgrade.name == 'yawn') {
         yawnUp.innerText = purchasedUpgrade.quantity
+        // purchasedUpgrade.quantity += totalUp.total++
+
     }else if (purchasedUpgrade.name == 'rest'){
         restUp.innerText = purchasedUpgrade.quantity
+        // purchasedUpgrade.quantity += totalUp.total
+
     }else{
         console.log("how did you get here")
     }
 
     
     clickValue.innerText = clickMaster.clickValue
+    
+}
+
+
+}
+
+
+function clickUp(){
+    let upPlus = document.getElementById('totalPerClick') 
+
+    totalUp.total = clickUpgrades.reduce((acc, cur) => acc + cur.multiplier, 0)
+    console.log(totalUp)
+}
+
+function autoUpgrade(){
+    let clickValue = document.getElementById('clickValue')
+let yawnUp = document.getElementById('yawnUp')
+let restUp = document.getElementById('restUp')
+
+
+const purchasedUpgrade = clickUpgrades.find(p => p.name == upgradeName)
+
+
+console.log(purchasedUpgrade);
+if (clickMaster.clickValue >= purchasedUpgrade.price) {
+
+    clickMaster.clickValue -= purchasedUpgrade.price
+    
+    if (purchasedUpgrade.name == 'yawn') {
+        purchasedUpgrade.quantity += 1
+        purchasedUpgrade.multiplier += 1
+    }else if (purchasedUpgrade.name == 'rest'){
+        purchasedUpgrade.quantity += 1
+        purchasedUpgrade.multiplier += 3
+    } else if (clickMaster.clickValue < purchasedUpgrade.price) {
+    purchasedUpgrade.quantity += 0
 }
 
 
 
 
+if (purchasedUpgrade.name == 'yawn') {
+    yawnUp.innerText = purchasedUpgrade.quantity
+    // purchasedUpgrade.quantity += totalUp.total++
 
-// function clickUp(){
-//     let value = document.getElementById('clickValue')
+}else if (purchasedUpgrade.name == 'rest'){
+    restUp.innerText = purchasedUpgrade.quantity
+    // purchasedUpgrade.quantity += totalUp.total
+
+}else{
+    console.log("how did you get here")
+}
 
 
-//     if (clickVal.yawn > 0) {
-//         clickVal.yawn * 1.5
-//     }else{
-//         console.log('no yawn upgrades to click')
-//     }
-    
-//     if (clickVal.rest > 0) {
-//         clickVal.rest * 1.5
-//     } else{
-//         console.log('no rest upgrades to click')
-//     }
-// }
+clickValue.innerText = clickMaster.clickValue
 
-// function yawnUpgrade(){
+}
 
-//     let yawnUp = document.getElementById('yawnUp')
-//     let cValue = document.getElementById('clickValue')
-
-//     if (clickMaster.clickValue >= clickUpgrade.price) {
-//         yawnClick.quantity++
-//         clickMaster.clickValue -= clickUpgrade.price
-//     }else(
-//         console.log("not enough!")
-//     )
-
-//     console.log(clickCash.clickValue)
-//     yawnUp.innerText = yawnUpgrade.quantity
-//     cValue.innerText = clickMaster.clickValue
-//     console.log()
-//     // clickUp()
-// }
-
-// function restUpgrade(){
-    
-// }
-
+}

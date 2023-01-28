@@ -51,7 +51,12 @@
         </div>
         <div class="container-fluid text-light">
             <div class="row">
-                <div class="col-3"></div>
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <div>
+                        <h3>+</h3><span id="totalPerClick">1</span>
+                    </div>
+                </div>
                 <div class="col-1 text-center">
                     <div class="card border border-warning">
                         <div class="card-body bg-dark">
@@ -73,18 +78,18 @@
             </div>
         </div>
         <div class="container-fluid text-light">
-            <div class="row">
-                <div class="col-3 text-center">
+            <div class="row ">
+                <div class="col-3 text-center ">
                     <h1>UPGRADES</h1>
                     <div>
-                        <h5>YAWN + 2</h5>
-                        <button class="btn btn-success" onclick="buyUpgrades('yawn')">yawn<span
-                                id="yawnBtn"></span></button>
+                        <h5>YAWN + 1</h5>
+                        <button class="btn btn-success" onclick="buyUpgrades('yawn')"><span id="yawnBtn">FREE</span>
+                        </button>
                     </div>
                     <div>
                         <h5>REST + 5</h5>
-                        <button class="btn btn-success" onclick="buyUpgrades('rest')">rest<span
-                                id="restBtn"></span></button>
+                        <button class="btn btn-success" onclick="buyUpgrades('rest')"><span id="restBtn">5</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-3">auto upgrades</div>
