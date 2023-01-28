@@ -75,13 +75,14 @@ function buyUpgrades(upgradeName){
             purchasedUpgrade.price +=5
             console.log(purchasedUpgrade.price)
             yBtn.innerText = purchasedUpgrade.price
+            
         }else if (purchasedUpgrade.name == 'rest'){
             purchasedUpgrade.quantity += 1
             purchasedUpgrade.multiplier += 5
             purchasedUpgrade.price +=15
             console.log(purchasedUpgrade.price)
             rBtn.innerText = purchasedUpgrade.price
-
+            
         } else if (clickMaster.clickValue < purchasedUpgrade.price) {
         purchasedUpgrade.quantity += 0
     }
@@ -103,18 +104,22 @@ function buyUpgrades(upgradeName){
 
     
     clickValue.innerText = clickMaster.clickValue
-    
+    clickUp()
 }
-
-
 }
 
 
 function clickUp(){
-    let upPlus = document.getElementById('totalPerClick') 
 
     totalUp.total = clickUpgrades.reduce((acc, cur) => acc + cur.multiplier, 0)
     console.log(totalUp)
+
+    updateClickPlus()
+}
+
+function updateClickPlus(){
+    let upPlus = document.getElementById('totalPerClick')
+    upPlus.innerText = totalUp.total
 }
 
 function autoUpgrade(){
