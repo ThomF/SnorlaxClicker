@@ -1,5 +1,6 @@
 let clickMaster = {
     click: 0,
+
     clickValue: 10000,
 }
 
@@ -46,15 +47,16 @@ function mainClick(){
     let clickValue = document.getElementById('clickValue')
     let upgradedClick = totalUp.total += clickMaster.clickValue
     
-    clicks.innerText = clickMaster.click++
+    clicks.innerText = clickMaster.click += 1
     clickValue.innerText = clickMaster.clickValue =+ totalUp.total
     console.log(clickMaster.click)
 
     totalUp.total += clickMaster.clickValue
-    clickMaster.clickValue++
+    clickMaster.clickValue += 1
     
     clickUp()
     clickAutoUp()
+    autoClicking()
 }
 
 function buyUpgrades(upgradeName){
@@ -167,4 +169,13 @@ function updateAutoClickPlus(){
     upPlus.innerText = totalAutoUp.total
 }
 
-
+function autoUpdater(){
+    let clickValue = document.getElementById('clickValue')
+    if(totalAutoUp.total > 0){
+        clickValue.innerText = clickMaster.clickValue =+ totalAutoUp.total
+        totalAutoUp.total += clickMaster.clickValue
+    }
+}
+function autoClicking(){
+    setInterval(autoUpdater, 2000)
+}
