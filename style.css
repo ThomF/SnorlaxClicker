@@ -17,8 +17,38 @@ body{
     width: 8em;
 }
 .bgG{
-    background-color: rgb(236, 234, 234);
+    background-color: rgb(240, 238, 238);
+}
+.bgCard{
+    background-color: rgb(218, 216, 216);
 }
 .fontSize{
     font-size: .9em;
+}
+
+#firstPageText {
+    --b:5px;  /* the thickness */
+    --c:#000; /* the color */
+    width: auto;
+    min-height: 100px;
+    padding:calc(5*var(--b));
+    position:relative;
+}
+    
+#firstPageText::before,
+#firstPageText::after { 
+    content:"";
+    position:absolute;
+    inset:0 0 50% 0;
+    background:
+    linear-gradient(var(--c) 0 0) 50%   0  /calc(100% - 4*var(--b)) var(--b),
+    linear-gradient(var(--c) 0 0) 0%   100%/var(--b) calc(100% - 2*var(--b)),
+    linear-gradient(var(--c) 0 0) 100% 100%/var(--b) calc(100% - 2*var(--b)),
+    conic-gradient(from  90deg,var(--c) 90deg,#0000 0) 0    0/calc(2*var(--b)) calc(2*var(--b)),
+    conic-gradient(from 180deg,var(--c) 90deg,#0000 0) 100% 0/calc(2*var(--b)) calc(2*var(--b));
+    background-repeat:no-repeat;
+}
+#firstPageText::after {
+    transform-origin:bottom;
+    transform:scaleY(-1);
 }
