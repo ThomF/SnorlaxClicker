@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "poke";
+    src: url("pokefont/pokefont.ttf");
+}
+
 body{
     /* background-image: url("imageLibrary/snorbg.png") ; */
     background-color: black;
+    font-family: "poke";
 }
