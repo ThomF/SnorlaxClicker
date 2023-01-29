@@ -3,7 +3,7 @@ let isAutoUpRunning = false
 let clickMaster = {
     click: 0,
 
-    clickValue: 10000,
+    clickValue: 200,
 }
 
 let clickUpgrades = [
@@ -16,7 +16,7 @@ let clickUpgrades = [
     },
     {
         name: 'rest',
-        price: 5,
+        price: 25,
         quantity: 0,
         multiplier: 0,
     }
@@ -25,13 +25,13 @@ let clickUpgrades = [
 let autoClickUpgrades = [
     {
         name: 'HyperBeam',
-        price: 100,
+        price: 200,
         quantity: 0,
         multiplier: 0
     },
     {
         name: 'Pound',
-        price: 250,
+        price: 2500,
         quantity: 0,
         multiplier: 0,
 }]
