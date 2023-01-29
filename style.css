@@ -9,11 +9,16 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; */
-    background-color: black;
+    background-color: rgb(171, 171, 171);
     font-family: "poke";
 }
 
 .btnSize{
     width: 8em;
-    
+}
+.bgG{
+    background-color: rgb(236, 234, 234);
+}
+.fontSize{
+    font-size: .9em;
 }
