@@ -11,8 +11,12 @@ body{
     background-size: cover; */
     background-color: rgb(171, 171, 171);
     font-family: "poke";
+    cursor: grab;
+    user-select: none;
 }
-
+.snorlax{
+    pointer-events: none;
+}
 .btnSize{
     width: 8em;
 }
