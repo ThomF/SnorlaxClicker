@@ -69,7 +69,9 @@ function buyUpgrades(upgradeName){
     let restUp = document.getElementById('restUp')
     let yBtn = document.getElementById('yawnBtn')
     let rBtn = document.getElementById('restBtn')
-
+    let yawnTotal = document.getElementById('yawnTotal')
+    let yawnTotal2 = document.getElementById('yawnTotal2')
+    
     const purchasedUpgrade = clickUpgrades.find(p => p.name == upgradeName)
     console.log(purchasedUpgrade);
     if (clickMaster.clickValue >= purchasedUpgrade.price) {
@@ -81,14 +83,14 @@ function buyUpgrades(upgradeName){
             purchasedUpgrade.price +=10
             console.log(purchasedUpgrade.price)
             yBtn.innerText = purchasedUpgrade.price
-            
+            yawnTotal.innerText = purchasedUpgrade.multiplier
         }else if (purchasedUpgrade.name == 'rest'){
             purchasedUpgrade.quantity += 1
             purchasedUpgrade.multiplier += 5
             purchasedUpgrade.price +=25
             console.log(purchasedUpgrade.price)
             rBtn.innerText = purchasedUpgrade.price
-            
+            yawnTotal2.innerText = purchasedUpgrade.multiplier
         } else if (clickMaster.clickValue < purchasedUpgrade.price) {
         purchasedUpgrade.quantity += 0
     }
