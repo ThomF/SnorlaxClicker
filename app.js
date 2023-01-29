@@ -183,7 +183,7 @@ function autoUpdater(){
 }
 function autoClicking(){
     if (!isAutoUpRunning) {
-        setInterval(autoUpdater, 2000)
+        setInterval(autoUpdater, 4000)
         isAutoUpRunning = true;
     }
 }
