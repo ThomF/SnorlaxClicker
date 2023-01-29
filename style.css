@@ -47,11 +47,9 @@ body{
     conic-gradient(from  90deg,var(--c) 90deg,#0000 0) 0    0/calc(2*var(--b)) calc(2*var(--b)),
     conic-gradient(from 180deg,var(--c) 90deg,#0000 0) 100% 0/calc(2*var(--b)) calc(2*var(--b));
     background-repeat:no-repeat;
+    z-index: -1;
 }
 #firstPageText::after {
     transform-origin:bottom;
     transform:scaleY(-1);
-}
-.card{
-    border-radius: 2em;
 }
