@@ -115,6 +115,8 @@ function buyAutoUp(upgradeName){
     let restUp = document.getElementById('poundUp')
     let yBtn = document.getElementById('hyperBtn')
     let rBtn = document.getElementById('poundBtn')
+    let hbTotal = document.getElementById('hbTotal')
+    let poundTotal = document.getElementById('poundTotal')
 
     const autoClickUp = autoClickUpgrades.find(p => p.name == upgradeName)
     console.log(autoClickUp);
@@ -128,14 +130,14 @@ function buyAutoUp(upgradeName){
             autoClickUp.price +=200
             console.log(autoClickUp.price)
             yBtn.innerText = autoClickUp.price
-            
+            hbTotal.innerText = autoClickUp.multiplier
         }else if (autoClickUp.name == 'Pound'){
             autoClickUp.quantity += 1
             autoClickUp.multiplier += 150
             autoClickUp.price +=350
             console.log(autoClickUp.price)
             rBtn.innerText = autoClickUp.price
-            
+            poundTotal.innerText = autoClickUp.multiplier
         } else if (clickMaster.clickValue < autoClickUp.price) {
         autoClickUp.quantity += 0
     }
