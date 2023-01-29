@@ -60,6 +60,7 @@ function mainClick(){
     clickUp()
     clickAutoUp()
     autoClicking()
+    // drawClick()
     console.log(totalUp.total)
 }
 
@@ -164,7 +165,7 @@ function clickUp(){
 
 function updateClickPlus(){
     let upPlus = document.getElementById('totalPerClick')
-    upPlus.innerText = totalUp.total
+    upPlus.innerText = totalUp.total + 1
 }
 
 function clickAutoUp(){
@@ -190,4 +191,13 @@ function autoClicking(){
         setInterval(autoUpdater, 4000)
         isAutoUpRunning = true;
     }
+}
+
+function drawClick(){
+    let total = document.getElementById('totalPerClick')
+
+    if (totalUp.total < 1) {
+        total.innerText += 1
+    }
+    console.log(totalUp.total)
 }
