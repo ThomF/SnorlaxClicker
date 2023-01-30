@@ -201,3 +201,4 @@ function drawClick(){
     }
     console.log(totalUp.total)
 }
+
